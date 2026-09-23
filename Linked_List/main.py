@@ -30,7 +30,19 @@ class LinkedList:
             temp_node = temp_node.next
         return result
 
+    def prepend(self, value):
+        new_node = Node(value=value)
+        if self.head is None:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            new_node.next = self.head
+            self.head = new_node
+
+        self.length += 1
+
 new_linked_list = LinkedList()
 new_linked_list.append(10)
 new_linked_list.append(20)
+new_linked_list.prepend(50)
 print(new_linked_list.__str__())
