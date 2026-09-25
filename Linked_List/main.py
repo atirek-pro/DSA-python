@@ -74,6 +74,18 @@ class LinkedList:
             index+=1
         return -1 
 
+    def get(self, index):
+        if index == -1:
+            return self.tail
+        if index < -1 or index > self.length:
+            return None
+
+        current = self.head
+        for _ in range(index):
+            current = current.next
+
+        return current
+
 
 
 new_linked_list = LinkedList()
@@ -90,3 +102,6 @@ new_linked_list.traverse()
 print("\n")
 print("Search Results")
 print(new_linked_list.search(30))
+print("\n")
+print("Get Method Results")
+print(new_linked_list.get(3))
