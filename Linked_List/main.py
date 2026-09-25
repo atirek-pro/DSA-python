@@ -58,6 +58,14 @@ class LinkedList:
         self.length += 1
         return True
 
+    def traverse(self):
+        current = self.head
+        while current:
+            print(current.value)
+            current = current.next
+
+
+
 new_linked_list = LinkedList()
 new_linked_list.insert(-1, 50)
 new_linked_list.append(10)
@@ -66,3 +74,6 @@ new_linked_list.append(30)
 new_linked_list.append(40)
 new_linked_list.insert(-1, 60)
 print(new_linked_list.__str__())
+print("\n")
+print("Traverse Results")
+new_linked_list.traverse()
