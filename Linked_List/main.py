@@ -64,6 +64,16 @@ class LinkedList:
             print(current.value)
             current = current.next
 
+    def search(self, target):
+        current = self.head
+        index = 0
+        while current:
+            if current.value == target:
+                return index
+            current = current.next
+            index+=1
+        return -1 
+
 
 
 new_linked_list = LinkedList()
@@ -77,3 +87,6 @@ print(new_linked_list.__str__())
 print("\n")
 print("Traverse Results")
 new_linked_list.traverse()
+print("\n")
+print("Search Results")
+print(new_linked_list.search(30))
